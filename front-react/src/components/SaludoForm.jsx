@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 
 const SaludoForm = () => {
-  const [nombre, setNombre] = useState(""); // Estado para el nombre ingresado
-  const [mensaje, setMensaje] = useState(""); // Estado para el mensaje mostrado
+  const [nombre, setNombre] = useState("");
+  const [mensaje, setMensaje] = useState("");
 
   const manejarCambio = (e) => {
-    setNombre(e.target.value); // Actualiza el estado del nombre
+    setNombre(e.target.value);
   };
 
   const manejarSubmit = (e) => {
-    e.preventDefault(); // Previene el comportamiento por defecto del formulario
+    e.preventDefault();
     if (nombre.length < 3) {
-      setMensaje("El nombre es demasiado corto.");
+      setMensaje("El nombre es demasiado corto, ingrese un nombre mayor a 3 caracteres.");
     } else {
       setMensaje(`Hola, ${nombre}!`);
     }
